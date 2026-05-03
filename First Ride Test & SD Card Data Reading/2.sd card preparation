@@ -1,0 +1,22 @@
+```text
+Take any SD card
+4GB or 8GB is enough
+
+Format it:
+Windows →
+  Right click SD card
+  → Format
+  → FAT32
+  → Default allocation
+  → Quick format
+  → Start
+
+Mac →
+  Disk Utility
+  → Select SD card
+  → Erase
+  → Format: MS-DOS FAT
+  → Erase
+
+Insert into device
+BEFORE powering on
