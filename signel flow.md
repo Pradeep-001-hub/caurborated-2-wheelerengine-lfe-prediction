@@ -1,3 +1,5 @@
+
+```text
 EXHAUST GAS
      ↓
 LSU 4.9 SENSOR
