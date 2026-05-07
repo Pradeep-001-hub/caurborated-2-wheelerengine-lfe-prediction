@@ -1,0 +1,4 @@
+ESP32 21 → SDA
+ESP32 22 → SCL
+VCC → 3.3V or 5V (module dependent)
+GND → GND
