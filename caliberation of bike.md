@@ -1,9 +1,8 @@
-============================================================
-ENGINE HEALTH DEVICE – AUTO CALIBRATION PROCEDURE
-============================================================
+
+ENGINE HEALTH DEVICE – AUTO CALIBRATION
+----
 
 PHASE 0 — SYSTEM PREPARATION
-------------------------------------------------------------
 Conditions before calibration:
 - Engine must be started and fully warmed up
 - No throttle input for 2–3 minutes (idle stabilization)
@@ -14,11 +13,10 @@ Reject calibration if:
 - Engine is cold
 - Sensor mounting is loose
 - Electrical noise is high (starter / ignition spikes)
-
-============================================================
+-----
 
 PHASE 1 — IDLE BASELINE CAPTURE
-------------------------------------------------------------
+
 Goal: Learn stable engine idle signature
 
 Conditions:
@@ -39,11 +37,9 @@ Only accept data if:
 - no spikes detected
 
 If unstable → discard sample
-
-============================================================
+-----
 
 PHASE 2 — LIGHT REV CALIBRATION
-------------------------------------------------------------
 Goal: Capture controlled engine response behavior
 
 Conditions:
@@ -63,11 +59,10 @@ Ignore data during:
 
 Only store:
 - post-rev stabilization data
-
-============================================================
+---------
 
 PHASE 3 — REAL RIDING PROFILE LEARNING
-------------------------------------------------------------
+
 Goal: Capture real-world engine behavior
 
 Conditions:
@@ -82,11 +77,9 @@ System records:
 
 This becomes:
 → real-world reference model
+-------
 
-============================================================
-
-PHASE 4 — BASELINE MODEL GENERATION
-------------------------------------------------------------
+PHASE 4 — BASELINE MODEL 
 System computes weighted baseline:
 
 FinalBaseline =
@@ -97,12 +90,9 @@ FinalBaseline =
 Outputs:
 - baseLambda
 - baseVibration
-- baseNoiseProfile
-
-============================================================
+------
 
 PHASE 5 — CONFIDENCE LOCK
-------------------------------------------------------------
 Condition:
 If calibration stability is consistent over time
 
@@ -114,11 +104,9 @@ Then:
 Rule:
 IF confidence > threshold:
     switch to slow drift correction mode
-
-============================================================
+------
 
 PHASE 6 — CONTINUOUS SELF-ADAPTATION (RUN MODE)
-------------------------------------------------------------
 System behavior after calibration:
 
 - Continuously updates baseline slowly
@@ -128,11 +116,9 @@ System behavior after calibration:
 
 Drift update rule:
 - Very slow adjustment only (long-term changes)
-
-============================================================
+-----
 
 SAFETY & VALIDATION RULES
-------------------------------------------------------------
 DO NOT calibrate if:
 - engine is cold
 - vibration mounting is unstable
@@ -142,8 +128,4 @@ DO NOT calibrate if:
 ALWAYS ensure:
 - idle stability first
 - warm engine condition
-- clean sensor signals
-
-============================================================
-END OF CALIBRATION PROCEDURE
-============================================================
+- clean sensor 
