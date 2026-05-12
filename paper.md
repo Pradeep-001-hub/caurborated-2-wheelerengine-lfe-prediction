@@ -101,7 +101,29 @@ The algorithm detects:
 - Remaining useful life (RUL) prediction
 
 See `Simulation of sensor/` folder for MATLAB scripts and generated results.
+-----
+## Complete System Architecture
 
+### Algorithm Layer (MATLAB)
+- `generate_synthetic_engine_data.m`: Generates 4 realistic degradation scenarios
+- `analyse_engine_health.m`: Core health index calculation & validation
+- `plot_dashboard.m`: Real-time monitoring dashboard
+
+### Scenarios Validated
+1. Healthy baseline (500 hours) — stable operation
+2. Normal → accelerated wear (2000 hours) — realistic degradation
+3. Critical stage (3000 hours) — failure trajectory
+4. Rich mixture fault (1500 hours) — diagnostic anomaly
+
+### Implementation Layer (ESP32 Firmware)
+Arduino-compatible code porting validated algorithm to embedded platform.
+
+### Hardware Layer (OpenSCAD)
+Parametric 3D-printable enclosure for field deployment.
+
+### Reproducibility
+All MATLAB scripts, firmware, and CAD designs are in the public repository.
+Complete synthetic datasets and generated dashboards included.
 ## Future Work
 
 Planned extensions include Bluetooth connectivity for smartphone visualization, ML-based knock detection algorithms, and expanded sensor fusion (temperature, pressure) for enhanced diagnostics.
