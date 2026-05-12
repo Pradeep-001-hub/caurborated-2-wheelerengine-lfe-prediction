@@ -56,6 +56,32 @@ Initial prototype validation on test vehicles demonstrates feasible sensor integ
 - **hardware/:** CAD models, schematic, BOM for laser-cut and 3D-printed components
 - **docs/:** Installation, calibration, and usage guides
 - **validation/:** Sample logs and test data from prototype vehicles
+----
+## Implementation & Validation
+
+### MATLAB Algorithm
+The core engine health prediction algorithm was developed and validated 
+in MATLAB. The algorithm analyzes lambda (λ) sensor readings and validates 
+against Euro 6 emission standards:
+- CO threshold: 1000 ppm
+- HC threshold: 100 ppm  
+- NOx threshold: 180 ppm
+- Lambda window: 0.97–1.03
+
+The health index (0–100 scale) integrates:
+- Combustion efficiency trends
+- Emission violation frequency
+- Lambda drift and stability
+- Degradation rate (dHealth/dt)
+
+### Firmware Implementation
+The validated MATLAB algorithm was ported to Arduino/ESP32 for real-time 
+deployment on carbureted two-wheelers using a Bosch LSU 4.9 wideband 
+oxygen sensor.
+
+### Hardware Design
+Parametric 3D enclosure designed in OpenSCAD for ease of manufacturing 
+and customization.
 
 ## Future Work
 
