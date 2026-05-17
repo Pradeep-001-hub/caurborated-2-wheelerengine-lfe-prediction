@@ -1,4 +1,4 @@
-
+contrictio phases of device
 ------
 PHASE 1 — Parts & Procurement
 A. Sensor & Driver
