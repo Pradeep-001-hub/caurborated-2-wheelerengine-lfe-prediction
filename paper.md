@@ -1,5 +1,5 @@
 ---
-title: 'Engine Health Prediction Device for Carbureted Two-Wheelers'
+title:Engine Health Prediction Device for Carbureted Two-Wheelers
 tags:
   - cj125 chip
   - esp32 microcontroller
@@ -11,7 +11,7 @@ tags:
 author:
   - name: koramutla pradeep
     orcid: 0009-0001-4852-0481
-   affiliation: "1"
+   affiliation:1
 affiliations:
   - name: independent researcher
   - index:1
