@@ -26,3 +26,30 @@ void heaterUpdate(unsigned long elapsedMs) {
 
   ledcWrite(HEATER_PWM_CHANNEL, duty);
 }
+
+
+
+
+float heaterKp = 8.0f;      // starting point from published open-source implementations
+float heaterKi = 0.003f;
+float targetResistance = 3.5f; // ohms — approximate LSU 4.9 target at operating temp, verify against your sensor's datasheet
+float integral = 0;
+
+int heaterPID(float measuredVoltage, float measuredCurrent) {
+  float measuredR = measuredVoltage / measuredCurrent;
+  float error = targetResistance - measuredR;
+
+  integral += error * heaterKi;
+  integral = constrain(integral, 0, 255);
+
+  float output = (error * heaterKp) + integral;
+  return constrain((int)output, 0, 255);
+}
+
+
+
+
+
+if (!cj125Healthy()) {
+  ledcWrite(HEATER_PWM_CHANNEL, 0);  // kill heater immediately on any CJ125 fault
+}
