@@ -213,6 +213,19 @@ void loop() {
     return;
   }
   sensorReady = true;
+float rpm = getRPM();
+if (calibrationMode) {
+  if (calFile && (now - lastLogMs >= 500)) {
+    calFile.print((now-startMs)/1000); calFile.print(",");
+    calFile.print(rpm, 0); calFile.print(",");
+    calFile.println(calcLambda(), 4);
+    calFile.flush();
+    lastLogMs = now;
+  }
+  showReading(calcLambda());
+  delay(200);
+  return;
+}
 
   if (digitalRead(BTN_HOLD) == LOW) {
     holdActive = !holdActive;
