@@ -189,6 +189,12 @@ void setup() {
 
   startMs = millis();
 }
+rpmInit();
+if (digitalRead(BTN_HOLD) == LOW) {
+  calibrationMode = true;
+  calFile = SD.open("/calib.csv", FILE_WRITE);
+  if (calFile) calFile.println("time_s,rpm,lambda");
+}
 
 // ─── LOOP ──────────────────────────────────────────────────
 void loop() {
