@@ -166,6 +166,7 @@ void logToSD(float lambda) {
 // ─── SETUP ─────────────────────────────────────────────────
 void setup() {
   Serial.begin(115200);
+float health = calcHealthRPMAware(lambda, rpm);
 
   pinMode(BTN_HOLD,  INPUT_PULLUP);
   pinMode(BTN_RESET, INPUT_PULLUP);
