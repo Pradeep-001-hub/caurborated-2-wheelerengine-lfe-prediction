@@ -17,6 +17,18 @@ float  sessionSum    = 0.0f;
 int    sessionCount  = 0;
 unsigned long startMs   = 0;
 unsigned long lastLogMs = 0;
+volatile unsigned long lastPulseUs = 0;
+volatile unsigned long pulseIntervalUs = 0;
+volatile bool newPulse = false;
+float rawRPM = 0, smoothedRPM = 0;
+bool calibrationMode = false;
+File calFile;
+
+void IRAM_ATTR onIgnitionPulse() { /* ...as given earlier... */ }
+void rpmInit() { /* ... */ }
+float getRPM() { /* ... */ }
+float getExpectedLambda(float rpm) { /* ... */ }
+float calcHealthRPMAware(float lambda, float rpm) { /* ... */ }
 File   logFile;
 
 // ─── CJ125 SPI ─────────────────────────────────────────────
